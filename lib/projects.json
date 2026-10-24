@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Is Organic Food Less Processed?",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "DSC 106 Project 1. A dot plot of 25,849 grocery products comparing organic and regular processing scores aisle by aisle. Overall organic looks far less processed, but within the same aisle the gap mostly disappears."
+  },
+  {
+    "title": "Climate Change Is Real: Persuasive Visualizations",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "DSC 106 Project 2, a group project. A choropleth and year-over-year charts built from the IMF's annual surface temperature data to argue that global temperatures have risen meaningfully since the mid-20th century."
+  },
+  {
+    "title": "Personal Portfolio Website",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This site. Built across the DSC 106 labs with HTML, CSS and JavaScript: a generated nav bar, a dark mode switch, a contact form, and project cards rendered from a JSON file."
+  },
+  {
+    "title": "MindfulAI, AI Usage Analytics Chrome Extension",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "A Chrome extension that logs AI tool interactions into a structured dataset, plus a Python pipeline that classifies usage by intent (studying, coding, entertainment) and aggregates the raw logs into analysis-ready outputs."
+  },
+  {
+    "title": "Product Review Sentiment Analysis",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Data analytics externship at Beats by Dre. Cleaned consumer datasets with Pandas and SQL, then ran sentiment analysis on 1,000+ product reviews to surface recurring pain points for the analytics team."
+  },
+  {
+    "title": "Content Performance Analysis Using Statistical Modeling",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Modeled how content attributes relate to ratings and viewership across 6,000+ records, using bootstrapping, Monte Carlo simulation and hypothesis testing, with a Matplotlib visualization suite for a non-technical audience."
+  },
+  {
+    "title": "Operational Performance Dashboard",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "SQL queries with multi-table joins and window functions feeding interactive Tableau dashboards that track KPIs, distributions and time-series trends."
+  },
+  {
+    "title": "Personal Finance Club Workshops",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Founded a campus Personal Finance Club and built its workshop curriculum on budgeting and investing, presenting to audiences of 70+ students."
+  },
+  {
+    "title": "Pariatur mollit ex ipsum",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Est consequat sunt ex sit proident dolore deserunt amet incididunt qui ea quis laboris nisi esse aliqua nulla labore aliquip magna anim sed tempor excepteur cupidatat non veniam culpa pariatur."
+  },
+  {
+    "title": "Veniam minim sunt officia",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Sed laboris consectetur dolor id sint ad adipisicing excepteur tempor non deserunt quis nisi nulla aute enim reprehenderit dolore ea occaecat est et do."
+  },
+  {
+    "title": "Mollit do ea ut",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Et incididunt ad irure mollit aute ut sed id magna qui in cupidatat velit veniam deserunt nisi duis nostrud officia esse ullamco laborum consequat."
+  },
+  {
+    "title": "Quis nostrud occaecat cillum",
+    "year": "2023",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Officia cillum pariatur sed eiusmod in dolor excepteur veniam duis consequat amet id adipisicing sunt cupidatat qui ex ea proident labore aute lorem ut occaecat ullamco elit quis."
+  }
+]

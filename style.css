@@ -193,3 +193,30 @@ form {
     margin: 0;
   }
 }
+
+/* ---------- GitHub stats ---------- */
+
+#profile-stats {
+  margin-block: 2em;
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0;
+    text-align: center;
+  }
+
+  dt {
+    grid-row: 1;
+    color: var(--color-muted);
+    font-size: 80%;
+    text-transform: uppercase;
+  }
+
+  dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 200%;
+    font-weight: bold;
+  }
+}
