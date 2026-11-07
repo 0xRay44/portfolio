@@ -90,7 +90,9 @@ function renderCommitInfo(data, commits) {
     (v) => v.length,
     (d) => new Date(d.datetime).toLocaleString('en', { dayPeriod: 'short' }),
   );
-  const maxPeriod = d3.greatest(workByPeriod, (d) => d[1])?.[0];
+  const maxPeriod = d3
+    .greatest(workByPeriod, (d) => d[1])?.[0]
+    ?.replace(/^in the /, '');
   dl.append('dt').text('Most work done');
   dl.append('dd').text(maxPeriod);
 }
@@ -125,9 +127,17 @@ function updateTooltipVisibility(isVisible) {
 
 function updateTooltipPosition(event) {
   const tooltip = document.getElementById('commit-tooltip');
-  // Offset a little so the tooltip never sits under the cursor
-  tooltip.style.left = `${event.clientX + 12}px`;
-  tooltip.style.top = `${event.clientY + 12}px`;
+  const offset = 12;
+  const { width, height } = tooltip.getBoundingClientRect();
+
+  // Sit just below-right of the cursor, flipping to the other side near an edge
+  let left = event.clientX + offset;
+  let top = event.clientY + offset;
+  if (left + width > window.innerWidth) left = event.clientX - offset - width;
+  if (top + height > window.innerHeight) top = event.clientY - offset - height;
+
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
 }
 
 // ---------- Scatterplot ----------
@@ -212,7 +222,7 @@ function renderScatterPlot(data, commits) {
     });
 
   // Axes
-  const xAxis = d3.axisBottom(xScale);
+  const xAxis = d3.axisBottom(xScale).ticks(width / 120);
   const yAxis = d3
     .axisLeft(yScale)
     .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
