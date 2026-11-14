@@ -138,12 +138,21 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   }
 
   for (let project of projects) {
+    // Local images (e.g. images/x.jpg) resolve from the site root, like the nav links
+    let imageSrc = project.image ?? 'https://dsc106.com/labs/lab02/images/empty.svg';
+    if (!imageSrc.startsWith('http')) imageSrc = BASE_PATH + imageSrc;
+
     const article = document.createElement('article');
     article.innerHTML = `
-      <${headingLevel}>${project.title ?? 'Untitled project'}</${headingLevel}>
-      <img src="${project.image ?? 'https://dsc106.com/labs/lab02/images/empty.svg'}" alt="${project.title ?? ''}">
+      <${headingLevel}>${
+        project.url
+          ? `<a href="${project.url}">${project.title ?? 'Untitled project'}</a>`
+          : project.title ?? 'Untitled project'
+      }</${headingLevel}>
+      <img src="${imageSrc}" alt="${project.title ?? ''}">
       <div>
         <p>${project.description ?? ''}</p>
+        ${project.url ? `<p><a href="${project.url}">View project →</a></p>` : ''}
         ${project.year ? `<p class="project-year">c. ${project.year}</p>` : ''}
       </div>
     `;

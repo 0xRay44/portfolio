@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bikewatching",
+    "year": "2026",
+    "image": "images/bikewatching.jpg",
+    "url": "https://0xray44.github.io/bikewatching/",
+    "description": "DSC 106 Lab 7. An interactive Mapbox map of Bluebikes traffic in Boston and Cambridge from about 260,000 rides in March 2024. Bike lanes are drawn from both cities' open data, D3 sizes each station by its traffic and colours it by whether more trips leave or arrive, and a time slider filters to any hour of the day."
+  },
+  {
     "title": "Is Organic Food Less Processed?",
     "year": "2026",
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
