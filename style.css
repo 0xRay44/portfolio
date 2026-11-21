@@ -358,9 +358,15 @@ form {
 
 circle {
   cursor: pointer;
-  transition: 200ms;
+  transition-property: transform, fill-opacity, fill, cx, cy, r;
+  transition-duration: 200ms, 200ms, 200ms, 400ms, 400ms, calc(var(--r, 10) * 20ms);
   transform-origin: center;
   transform-box: fill-box;
+
+  /* New commits grow in from nothing, big ones taking longer, so every dot grows at the same speed */
+  @starting-style {
+    r: 0;
+  }
 
   &:hover {
     transform: scale(1.5);
@@ -429,5 +435,184 @@ dl.info[hidden]:not(:hover, :focus-within) {
     font-family: ui-monospace, monospace;
     font-size: 85%;
     word-break: break-all;
+  }
+}
+
+/* The chart now fills half the width, so scale the axis labels up to stay readable */
+#chart .x-axis,
+#chart .y-axis {
+  font-size: 22px;
+}
+
+/* ---------- Meta: time slider ---------- */
+
+#commit-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25em 0.75em;
+  margin-bottom: 0.5em;
+
+  input {
+    flex: 1;
+    min-width: 8em;
+  }
+
+  time {
+    flex-basis: 100%;
+    color: var(--color-muted);
+    font-size: 90%;
+  }
+}
+
+/* ---------- Meta: scrollytelling ---------- */
+
+#scrolly-1,
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story,
+#files-story {
+  position: relative;
+}
+
+#scatter-plot,
+#files-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+  padding-top: 1em;
+}
+
+/* The file dots need more room than the story text */
+#files-plot {
+  flex: 1.6;
+  height: auto;
+  align-self: start;
+}
+
+.step {
+  padding-bottom: 55vh;
+
+  &:first-child {
+    padding-top: 10vh;
+  }
+
+  &:last-child {
+    padding-bottom: 20vh;
+  }
+
+  p {
+    margin: 0 0 0.5em;
+  }
+
+  .step-date {
+    font-weight: bold;
+    color: var(--color-accent);
+  }
+}
+
+/* ---------- Meta: files as dots ---------- */
+
+#files-time {
+  margin: 0 0 0.5em;
+  font-weight: bold;
+}
+
+#files-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em 1em;
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+  font-size: 85%;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.35em;
+  }
+
+  .swatch {
+    width: 0.8em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color);
+  }
+
+  small {
+    color: var(--color-muted);
+  }
+}
+
+#files {
+  display: grid;
+  /* Name column is at least as wide as the longest path, so names never break mid-word */
+  grid-template-columns: minmax(max-content, 1fr) 4fr;
+  gap: 0.5em 1em;
+  margin: 0;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+    line-height: 1.2;
+
+    code {
+      font-size: 85%;
+    }
+
+    small {
+      display: block;
+      font-size: 75%;
+      color: var(--color-muted);
+    }
+  }
+
+  dd {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin-left: 0;
+  }
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
+@media (max-width: 40em) {
+  #scrolly-1,
+  #scrolly-2 {
+    flex-direction: column-reverse;
+  }
+
+  #scatter-plot,
+  #files-plot {
+    height: auto;
+    z-index: 1;
+    background: canvas;
   }
 }
